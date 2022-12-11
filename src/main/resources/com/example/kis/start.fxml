@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ada6f5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kis.StartController">
+    <children>
+        <AnchorPane layoutY="200.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: edeff0;">
+         <children>
+            <TableView fx:id="tableResources" layoutY="2.0" prefHeight="200.0" prefWidth="550.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="50.0" text="id" />
+                <TableColumn fx:id="col_name" prefWidth="150.0" text="name" />
+                  <TableColumn fx:id="col_units" prefWidth="50.0" text="units" />
+                  <TableColumn fx:id="col_price" prefWidth="100.0" text="price" />
+                  <TableColumn fx:id="col_balance" prefWidth="100.0" text="balance" />
+                  <TableColumn fx:id="col_actualDate" prefWidth="100.0" text="actualDate" />
+              </columns>
+            </TableView>
+            <Button fx:id="btn_update" layoutX="549.0" layoutY="2.0" maxHeight="40.0" maxWidth="53.0" minHeight="19.0" minWidth="53.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="53.0" text="UpD" />
+            <Button fx:id="btn_delete" layoutX="549.0" layoutY="52.0" maxHeight="40.0" maxWidth="53.0" minHeight="19.0" minWidth="53.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="53.0" text="Del" />
+         </children>
+        </AnchorPane>
+      <Label fx:id="username_label" layoutX="430.0" layoutY="6.0" prefHeight="51.0" prefWidth="171.0" style="-fx-background-color: fcf9a2;" textAlignment="RIGHT">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_insert" layoutX="501.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: fcdf95;" text="Добавить">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <MenuButton fx:id="btn_selectType" layoutX="359.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="119.0" text="тип выборки">
+        <items>
+          <MenuItem fx:id="btn_item1" mnemonicParsing="false" text="name" />
+          <MenuItem fx:id="btn_item2" mnemonicParsing="false" text="units" />
+            <MenuItem fx:id="btn_item3" mnemonicParsing="false" text="amount" />
+            <MenuItem fx:id="btn_item4" mnemonicParsing="false" text="date" />
+            <MenuItem fx:id="btn_item5" mnemonicParsing="false" text="price" />
+        </items>
+      </MenuButton>
+      <Label fx:id="tablename_label" layoutX="14.0" layoutY="160.0" prefHeight="30.0" prefWidth="171.0" text="Таблица: Product">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_exit" layoutX="500.0" layoutY="67.0" minHeight="21.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Выход" />
+    </children>
+</AnchorPane>
