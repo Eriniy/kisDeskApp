@@ -31,6 +31,9 @@ public class AdminStartController {
     private Button btn_updateEmployee;
 
     @FXML
+    private Button btn_changeWay;
+
+    @FXML
     private Button btn_insert;
 
     @FXML
