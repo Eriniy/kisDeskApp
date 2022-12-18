@@ -31,7 +31,10 @@ public class AdminStartController {
     private Button btn_updateEmployee;
 
     @FXML
-    private Button btn_changeWay;
+    private Button btn_organization;
+
+    @FXML
+    private Button btn_waybill;
 
     @FXML
     private Button btn_insert;
@@ -41,24 +44,6 @@ public class AdminStartController {
 
     @FXML
     private Button btn_delete;
-
-    @FXML
-    private MenuButton btn_selectType;
-
-    @FXML
-    private MenuItem btn_item1;
-
-    @FXML
-    private MenuItem btn_item2;
-
-    @FXML
-    private MenuItem btn_item3;
-
-    @FXML
-    private MenuItem btn_item4;
-
-    @FXML
-    private MenuItem btn_item5;
 
     @FXML
     private Button btn_exit;
@@ -102,8 +87,42 @@ public class AdminStartController {
 
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("updateUser" +
+                root = FXMLLoader.load(getClass().getResource("viewUserScene" +
                         ".fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        });
+
+        btn_organization.setOnAction(event ->{
+            btn_organization.getScene().getWindow().hide();
+
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource(
+                        "viewOrganizationScene" +
+                        ".fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        });
+
+        btn_waybill.setOnAction(event ->{
+            btn_waybill.getScene().getWindow().hide();
+
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource(
+                        "viewWaybillScene" +
+                                ".fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -186,84 +205,84 @@ public class AdminStartController {
 
         });
 
-        btn_item1.setOnAction(event ->{
-            btn_selectType.getScene().getWindow().hide();
-
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("select.fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        });
-
-        btn_item2.setOnAction(event ->{
-            btn_selectType.getScene().getWindow().hide();
-
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("selectUnits" +
-                        ".fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        });
-
-        btn_item3.setOnAction(event ->{
-            btn_selectType.getScene().getWindow().hide();
-
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("selectAmount" +
-                        ".fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        });
-
-        btn_item4.setOnAction(event ->{
-            btn_selectType.getScene().getWindow().hide();
-
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("selectDate" +
-                        ".fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        });
-
-        btn_item5.setOnAction(event ->{
-            btn_selectType.getScene().getWindow().hide();
-
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("selectPrice" +
-                        ".fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        });
+//        btn_item1.setOnAction(event ->{
+//            btn_selectType.getScene().getWindow().hide();
+//
+//            Parent root = null;
+//            try {
+//                root = FXMLLoader.load(getClass().getResource("select.fxml"));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            Scene scene = new Scene(root);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
+//        });
+//
+//        btn_item2.setOnAction(event ->{
+//            btn_selectType.getScene().getWindow().hide();
+//
+//            Parent root = null;
+//            try {
+//                root = FXMLLoader.load(getClass().getResource("selectUnits" +
+//                        ".fxml"));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            Scene scene = new Scene(root);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
+//        });
+//
+//        btn_item3.setOnAction(event ->{
+//            btn_selectType.getScene().getWindow().hide();
+//
+//            Parent root = null;
+//            try {
+//                root = FXMLLoader.load(getClass().getResource("selectAmount" +
+//                        ".fxml"));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            Scene scene = new Scene(root);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
+//        });
+//
+//        btn_item4.setOnAction(event ->{
+//            btn_selectType.getScene().getWindow().hide();
+//
+//            Parent root = null;
+//            try {
+//                root = FXMLLoader.load(getClass().getResource("selectDate" +
+//                        ".fxml"));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            Scene scene = new Scene(root);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
+//        });
+//
+//        btn_item5.setOnAction(event ->{
+//            btn_selectType.getScene().getWindow().hide();
+//
+//            Parent root = null;
+//            try {
+//                root = FXMLLoader.load(getClass().getResource("selectPrice" +
+//                        ".fxml"));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//            Scene scene = new Scene(root);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
+//        });
 
         btn_exit.setOnAction(event ->{
             User.usersList.remove(0);

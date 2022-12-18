@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ada6f5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kis.UpdateWaybillController">
+    <children>
+        <AnchorPane layoutY="71.0" prefHeight="329.0" prefWidth="600.0" style="-fx-background-color: edeff0;">
+            <children>
+                <Text layoutX="28.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Редактировать запись из таблицы Waybill" wrappingWidth="373.876953125">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Text layoutX="39.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number" wrappingWidth="98.17446899414062">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Text layoutX="39.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type" wrappingWidth="98.17446899414062">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Text layoutX="39.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date" wrappingWidth="98.17446899414062">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Text layoutX="39.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="client_id" wrappingWidth="98.17446899414062">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <DatePicker fx:id="date_panel" layoutX="155.0" layoutY="172.0" />
+                <TextField fx:id="clientId_field" layoutX="155.0" layoutY="219.0" />
+                <Button fx:id="btn_updateDB" layoutX="460.0" layoutY="262.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Редактировать" />
+                <Button fx:id="btn_clear" layoutX="460.0" layoutY="219.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Очистить" />
+                <Text layoutX="39.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id" wrappingWidth="98.17446899414062">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Text fx:id="idContent_label" layoutX="155.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.17446899414062">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+            <TextField fx:id="number_field" layoutX="155.0" layoutY="87.0" />
+            <ComboBox fx:id="combox_type" layoutX="155.0" layoutY="130.0" prefWidth="150.0" />
+            </children>
+        </AnchorPane>
+        <Text layoutX="198.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Редактирование" textAlignment="CENTER" wrappingWidth="203.2103271484375">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Button fx:id="btn_returnBack" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="61.0" text="Назад" />
+    </children>
+</AnchorPane>

@@ -55,6 +55,9 @@ public class StartController {
     private Button btn_exit;
 
     @FXML
+    private Button btn_viewWaybill;
+
+    @FXML
     private TableColumn<Content, Date> col_actualDate;
 
     @FXML
@@ -97,6 +100,24 @@ public class StartController {
             Parent root = null;
             try {
                 root = FXMLLoader.load(getClass().getResource("insertContent" +
+                        ".fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+
+        });
+
+        btn_viewWaybill.setOnAction(event ->{
+            btn_insert.getScene().getWindow().hide();
+
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource(
+                        "viewWaybillScene" +
                         ".fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);

@@ -86,7 +86,7 @@ public class UpdateUserSelectController {
             btn_returnBack.getScene().getWindow().hide();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("updateUser" +
+                root = FXMLLoader.load(getClass().getResource("viewUserScene" +
                         ".fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);

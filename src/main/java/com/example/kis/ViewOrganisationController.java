@@ -2,7 +2,6 @@ package com.example.kis;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -13,7 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class UpdateUserController {
+public class ViewOrganisationController {
 
     @FXML
     private ResourceBundle resources;
@@ -28,31 +27,37 @@ public class UpdateUserController {
     private Button btn_exit;
 
     @FXML
+    private Button btn_returnBack;
+
+    @FXML
     private Button btn_insert;
 
     @FXML
     private Button btn_update;
 
     @FXML
-    private Button btn_returnBack;
+    private TableColumn<Organization, String> col_INN;
 
     @FXML
-    private TableColumn<User, Integer> col_id;
+    private TableColumn<Organization, String> col_address;
 
     @FXML
-    private TableColumn<User, Integer> col_law;
+    private TableColumn<Organization, Integer> col_id;
 
     @FXML
-    private TableColumn<User, String> col_login;
+    private TableColumn<Organization, String> col_jobTitle;
 
     @FXML
-    private TableColumn<User, String> col_name;
+    private TableColumn<Organization, String> col_name;
 
     @FXML
-    private TableColumn<User, String> col_password;
+    private TableColumn<Organization, String> col_tel;
 
     @FXML
-    private TableView<User> tableResources;
+    private TableView<Organization> tableResources;
+
+    @FXML
+    private Label tablename_label;
 
     @FXML
     private Label username_label;
@@ -62,16 +67,17 @@ public class UpdateUserController {
         username_label.setText(User.usersList.get(0).getName());
 
         ConnectionDataBase connDB = new ConnectionDataBase();
-        User.allUsersList = connDB.getUserList();
+        Organization.organizationList = connDB.getOrganisation();
 
-        showUsers();
+        showOrganisation();
 
         btn_insert.setOnAction(event ->{
             btn_insert.getScene().getWindow().hide();
 
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("insertUser" +
+                root = FXMLLoader.load(getClass().getResource(
+                        "insertOrganization" +
                         ".fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -90,8 +96,8 @@ public class UpdateUserController {
                 Parent root = null;
                 try {
                     root = FXMLLoader.load(getClass().getResource(
-                            "updateUserSelect" +
-                            ".fxml"));
+                            "updateOrganization" +
+                                    ".fxml"));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -167,35 +173,39 @@ public class UpdateUserController {
             stage.show();
 
         });
+
+
     }
 
-    public void showUsers(){
-        col_id.setCellValueFactory(new PropertyValueFactory<User,
+    public void showOrganisation(){
+        col_id.setCellValueFactory(new PropertyValueFactory<Organization,
                 Integer>("id"));
-        col_name.setCellValueFactory(new PropertyValueFactory<User,
+        col_name.setCellValueFactory(new PropertyValueFactory<Organization,
                 String>("name"));
-        col_login.setCellValueFactory(new PropertyValueFactory<User,
-                String>("login"));
-        col_password.setCellValueFactory(new PropertyValueFactory<User,
-                String>("password"));
-        col_law.setCellValueFactory(new PropertyValueFactory<User,
-                Integer>("law"));
+        col_jobTitle.setCellValueFactory(new PropertyValueFactory<Organization,
+                String>("jobTitle"));
+        col_address.setCellValueFactory(new PropertyValueFactory<Organization,
+                String>("name"));
+        col_INN.setCellValueFactory(new PropertyValueFactory<Organization,
+                String>("inn"));
+        col_tel.setCellValueFactory(new PropertyValueFactory<Organization,
+                String>("tel"));
 
-        tableResources.setItems(User.allUsersList);
+        tableResources.setItems(Organization.organizationList);
     }
 
-    public User getSelectedContent(){
-        User contentSelected =
+    public Organization getSelectedContent(){
+        Organization contentSelected =
                 tableResources.getSelectionModel().getSelectedItem();
         return contentSelected;
     }
 
     public boolean nullSelectedContent(){
-        User contentSelected =
+        Organization contentSelected =
                 tableResources.getSelectionModel().getSelectedItem();
 
         if (contentSelected!=null){
-            User.userSelected = contentSelected;
+            Organization.organizationSelected = contentSelected;
             return true;
         }
         else {
@@ -203,12 +213,12 @@ public class UpdateUserController {
         }
     }
 
-    public void deleteSelectedContent(User contentSelected){
+    public void deleteSelectedContent(Organization contentSelected){
         ConnectionDataBase connDB = new ConnectionDataBase();
 
-        connDB.deleteUser(contentSelected);
+        connDB.deleteOrganisation(contentSelected);
 
-        connDB.getUserList();
+        connDB.getOrganisation();
     }
 
 }
